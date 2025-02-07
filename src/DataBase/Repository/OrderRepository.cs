@@ -20,8 +20,12 @@ public class OrderRepository : DbContext, IOrderRepository
 
     public Task<IEnumerable<Order>> GetUserOrders(int userId)
     {
-        Task<IEnumerable<Order>> a = Orders.Where(o => o.UserId == userId).ToListAsync().ContinueWith(task => (IEnumerable<Order>)task.Result, TaskScheduler.Current);
-        return a;
+        return Orders.Where(o => o.UserId == userId).ToListAsync().ContinueWith(task => (IEnumerable<Order>)task.Result, TaskScheduler.Current);
+    }
+
+    public Task<IEnumerable<Order>> GetAllOrders()
+    {
+        return Orders.ToListAsync().ContinueWith(task => (IEnumerable<Order>)task.Result, TaskScheduler.Current);
     }
 
     public void AddOrder(Order order)

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import config from "./config";
 
 function OrderList() {
 	const [orders, setOrders] = useState([]);
 
 	useEffect(() => {
 		axios
-			.get("http://backend:5000/api/orders")
+			.get(`${config.host}/api/orders`)
 			.then((response) => {
-				console.log(response.data);
 				setOrders(response.data);
 			})
 			.catch((error) => {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import config from "./config";
 
 function OrderForm() {
 	const [order, setOrder] = useState({
@@ -8,7 +9,7 @@ function OrderForm() {
 		senderAddress: "",
 		receiverCity: "",
 		receiverAddress: "",
-		cargoWeight: "",
+		cargoWeightKg: "",
 		pickupDate: "",
 	});
 
@@ -21,7 +22,7 @@ function OrderForm() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		axios
-			.post("http://backend:5000/api/orders", order)
+			.post(`${config.host}/api/orders`, order)
 			.then((_) => {
 				navigate("/");
 			})
@@ -79,7 +80,7 @@ function OrderForm() {
 					<input
 						type="number"
 						step="0.01"
-						name="cargoWeight"
+						name="cargoWeightKg"
 						value={order.cargoWeightKg}
 						onChange={handleChange}
 						required

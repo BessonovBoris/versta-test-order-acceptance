@@ -17,8 +17,7 @@ public class UserRepository : DbContext, IUserRepository
     {
         try
         {
-            Task<User?> user = Users.SingleOrDefaultAsync(user => user.Name == username && user.Password == password);
-            return user;
+            return Users.SingleOrDefaultAsync(user => user.Name == username && user.Password == password);
         }
         catch (InvalidOperationException e)
         {

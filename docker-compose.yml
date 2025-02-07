@@ -20,8 +20,8 @@ services:
     
   frontend:
     build:
-      context: ../versta-frontend
-      dockerfile: ../versta-frontend/Dockerfile
+      context: ./Frontend
+      dockerfile: Dockerfile
     restart: always
     container_name: frontend
     ports:

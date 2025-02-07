@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import config from "./config";
 
 function OrderDetails() {
 	const { id } = useParams();
@@ -8,7 +9,7 @@ function OrderDetails() {
 
 	useEffect(() => {
 		axios
-			.get(`http://backend:5000/api/orders/${id}`)
+			.get(`${config.host}/api/orders/${id}`)
 			.then((response) => {
 				setOrder(response.data);
 			})
