@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  dataBase:
+    image: postgres
+    container_name: dataBase
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    container_name: backend
+    ports:
+      - "8080:8080"
+    
+  frontend:
+    build:
+      context: ../versta-frontend
+      dockerfile: ../versta-frontend/Dockerfile
+    restart: always
+    container_name: frontend
+    ports:
+      - "3000:3000"
+        

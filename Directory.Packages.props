@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <EnablePackageVersionOverride>false</EnablePackageVersionOverride>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1" />
+    <PackageVersion Include="SourceKit.Analyzers.Collections" Version="1.0.4" />
+    <PackageVersion Include="SourceKit.Analyzers.Enumerable" Version="1.0.4" />
+    <PackageVersion Include="SourceKit.Analyzers.MemberAccessibility" Version="1.0.4" />
+    <PackageVersion Include="SourceKit.Analyzers.Nullable" Version="1.0.4" />
+    <PackageVersion Include="SourceKit.Analyzers.Properties" Version="1.0.4" />
+    <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.507" />
+    <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.3" />
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1" />
+  </ItemGroup>
+</Project>
